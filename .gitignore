@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+query_predict
+starspace
