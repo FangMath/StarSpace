@@ -143,6 +143,11 @@ Matrix<Real> EmbedModel::projectLHS(const std::vector<Base>& ws) {
 
 void EmbedModel::projectLHS(const std::vector<Base>& ws, Matrix<Real>& retval) {
   LHSEmbeddings_->forward(ws, retval);
+  cout << "--------------- before normalization ------------" << endl;
+  cout << "input Matric size: " << retval.numRows() << "x" << retval.numCols() << endl;
+  for (int i = 0; i < retval.numCols(); i++) 
+    cout << retval.matrix(0,i) << ",";
+  cout << endl;
   if (ws.size()) {
     auto norm = (args_->similarity == "dot") ?
       pow(ws.size(), args_->p) : norm2(retval);

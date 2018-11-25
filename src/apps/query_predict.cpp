@@ -49,6 +49,11 @@ int main(int argc, char** argv) {
     // Do the prediction
     vector<Base> query_vec;
     sp.parseDoc(input, query_vec, " ");
+    cout << "input word index and its weight -> " << endl;
+    for (auto &k: query_vec) {
+        cout << k.first << ":" << k.second << endl;
+    }
+
     vector<Predictions> predictions;
     sp.predictOne(query_vec, predictions);
     for (int i = 0; i < predictions.size(); i++) {
