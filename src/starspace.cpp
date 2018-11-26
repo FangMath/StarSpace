@@ -307,7 +307,7 @@ void StarSpace::predictOne(
   for (int i = 0; i < lhsM.numCols(); i++) 
     cout << lhsM.matrix(0,i) << ",";
   cout << endl;
-  //cout << lhsM[99] << endl;
+
   std::priority_queue<Predictions> heap;
   for (unsigned int i = 0; i < baseDocVectors_.size(); i++) {
     auto cur_score = model_->similarity(lhsM, baseDocVectors_[i]);
